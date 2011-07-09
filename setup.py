@@ -6,6 +6,8 @@
 #
 
 import glob, os, re, struct, string, sys
+import subprocess
+from distutils.spawn import find_executable
 
 # make it possible to run the setup script from another directory
 try:
@@ -146,6 +148,16 @@ class pil_build_ext(build_ext):
             # darwin ports installation directories
             add_directory(library_dirs, "/opt/local/lib")
             add_directory(include_dirs, "/opt/local/include")
+
+        elif find_executable('dpkg-architecture'):
+            # Debian/Ubuntu multiarch support.
+            proc = subprocess.Popen(
+                'dpkg-architecture -qDEB_HOST_MULTIARCH'.split(),
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            stdout, stderr = proc.communicate()
+            multiarch_path = stdout.strip()
+            add_directory(include_dirs, '/usr/include/' + multiarch_path)
+            add_directory(library_dirs, '/usr/lib/' + multiarch_path)
 
         add_directory(library_dirs, "/usr/local/lib")
         # FIXME: check /opt/stuff directories here?

@@ -1,3 +1,5 @@
+#! /usr/bin/python
+
 #
 # The Python Imaging Library
 # $Id$

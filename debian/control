@@ -1,0 +1,111 @@
+Source: python-imaging
+Section: python
+Priority: optional
+Maintainer: Matthias Klose <doko@debian.org>
+Build-Depends: tk8.5-dev, python-all-dev (>= 2.6.5-9~), python-all-dbg, python-tk-dbg (>= 2.5.2-1.1), libsane-dev, libfreetype6-dev, libjpeg8-dev, zlib1g-dev, liblcms1-dev, debhelper (>= 5.0.37.1)
+Build-Conflicts: python-numarray
+XS-Python-Version: all
+Standards-Version: 3.9.2
+
+Package: python-imaging
+Architecture: any
+Depends: ${python:Depends}, mime-support | python-imaging-tk, ${shlibs:Depends}, ${misc:Depends}
+Suggests: python-imaging-doc, python-imaging-dbg
+Provides: ${python:Provides}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library
+ The Python Imaging Library (PIL) adds an image object to your Python
+ interpreter. You can load images from a variety of file formats, and
+ apply a rich set of image operations to them.
+ .
+ Image Objects:
+  o Bilevel, greyscale, palette, true colour (RGB), true colour with
+    transparency (RGBA).
+  o colour separation (CMYK).
+  o Copy, cut, paste operations.
+  o Flip, transpose, resize, rotate, and arbitrary affine transforms.
+  o Transparency operations.
+  o Channel and point operations.
+  o Colour transforms, including matrix operations.
+  o Image enhancement, including convolution filters.
+ .
+ File Formats:
+  o Full (Open/Load/Save): BMP, EPS (with ghostscript), GIF, IM, JPEG,
+    MSP, PDF, PNG, PPM, TIFF, XBM.
+  o Read only (Open/Load): ARG, CUR, DCX, FLI, FPX, GBR, GD, ICO, IMT, IPTC,
+    MCIDAS, MPEG, PhotoCD, PCX, PIXAR, PSD, TGA, SGI, SUN, TGA, WMF, XPM.
+  o Save only: PDF, EPS (without ghostscript).
+
+Package: python-imaging-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: python-imaging (= ${binary:Version}), python-dbg, ${shlibs:Depends}, ${misc:Depends}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library (debug extension)
+ The Python Imaging Library (PIL) adds an image object to your Python
+ interpreter. You can load images from a variety of file formats, and
+ apply a rich set of image operations to them.
+ .
+ This package contains the extension built for the Python debug interpreter.
+
+Package: python-imaging-tk
+Architecture: any
+Depends: python-imaging (= ${binary:Version}), python-tk (>= 2.5.2-1.1), ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Suggests: python-imaging-doc, python-imaging-tk-dbg
+Provides: ${python:Provides}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library - ImageTk Module
+ Tk dependent python-imaging module.
+
+Package: python-imaging-tk-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: python-imaging-tk (= ${binary:Version}), python-imaging-dbg (= ${binary:Version}), python-dbg, ${shlibs:Depends}, ${misc:Depends}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library - ImageTk Module (debug extension)
+ Tk dependent python-imaging module.
+ .
+ This package contains the extension built for the Python debug interpreter.
+
+Package: python-imaging-sane
+Architecture: any
+Depends: python-imaging (= ${binary:Version}), ${python:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Recommends: python-tk (>= 2.5.2-1.1)
+Suggests: python-imaging-doc, python-imaging-sane-dbg
+Provides: ${python:Provides}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library - SANE interface
+ The imaging-sane module is a Python interface to the SANE (Scanner
+ Access is Now Easy) library, which provides access to various raster
+ scanning devices such as flatbed scanners and digital cameras.
+
+Package: python-imaging-sane-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: python-imaging-sane (= ${binary:Version}), python-imaging-dbg (= ${binary:Version}), python-dbg, ${shlibs:Depends}, ${misc:Depends}
+XB-Python-Version: ${python:Versions}
+Description: Python Imaging Library - SANE interface (debug extension)
+ The imaging-sane module is a Python interface to the SANE (Scanner
+ Access is Now Easy) library, which provides access to various raster
+ scanning devices such as flatbed scanners and digital cameras.
+ .
+ This package contains the extension built for the Python debug interpreter.
+
+Package: python-imaging-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: python-imaging-doc-html, python-imaging-doc-pdf, python-doc, python-imaging, python-imaging-tk
+Replaces: python-pil-doc
+Conflicts: python-pil-doc
+Description: Examples for the Python Imaging Library
+ The Python Imaging Library (PIL) adds an image object to your
+ Python interpreter. You can load image objects from a variety of file
+ formats, and apply a rich set of image operations to them.
+ .
+ This package contains PIL API documentation and some example scripts.
+ You may also want to look at the python-imaging-doc-html or
+ python-imaging-doc-pdf packages for the PIL handbook documentation.
