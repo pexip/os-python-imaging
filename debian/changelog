@@ -1,3 +1,9 @@
+python-imaging (1.1.7-4pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Wed, 25 Dec 2013 03:01:26 +0000
+
 python-imaging (1.1.7-4) unstable; urgency=low
 
   * Add multiarch search directories as given by dpkg-architecture.
