@@ -1,3 +1,14 @@
+python-imaging (1.1.7-4ubuntu0.12.04.1) precise-security; urgency=medium
+
+  * SECURITY UPDATE: insecure use of temporary files
+    - PIL/EpsImagePlugin.py, PIL/Image.py, PIL/IptcImagePlugin.py,
+      PIL/JpegImagePlugin.py: use tempfile.mkstemp().
+    - https://github.com/wiredfool/Pillow/commit/1e331e3e6a40141ca8eee4f5da9f74e895423b66
+    - CVE-2014-1932
+    - CVE-2014-1933
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 31 Mar 2014 10:25:50 -0400
+
 python-imaging (1.1.7-4) unstable; urgency=low
 
   * Add multiarch search directories as given by dpkg-architecture.
