@@ -2,7 +2,8 @@ Source: python-imaging
 Section: python
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
-XSBC-Pexip-Original-Maintainer: Matthias Klose <doko@debian.org>
+XSBC-Pexip-Original-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Matthias Klose <doko@debian.org>
 Build-Depends: tk8.5-dev, python-all-dev (>= 2.6.5-9~), python-all-dbg, python-tk-dbg (>= 2.5.2-1.1), libsane-dev, libfreetype6-dev, libjpeg8-dev, zlib1g-dev, liblcms1-dev, debhelper (>= 5.0.37.1)
 Build-Conflicts: python-numarray
 XS-Python-Version: all
