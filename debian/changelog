@@ -1,3 +1,11 @@
+python-imaging (1.1.7-4ubuntu0.12.04.1pexip3) pexip; urgency=low
+
+  * SECURITY UPDATE: denial of service in PcdDecode.c
+    - https://github.com/python-pillow/Pillow/commit/5ec7fd0ecbbebabea2aa8d9b17cf0bac4a38703b
+    - CVE-2016-2533
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 01 Mar 2016 10:07:32 +0000
+
 python-imaging (1.1.7-4ubuntu0.12.04.1pexip2) pexip; urgency=low
 
   * SECURITY UPDATE: denial of service in icns plugin
